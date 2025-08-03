@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family:  Georgia, sans-serif;
+            font-family: Georgia, sans-serif;
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
             min-height: 100vh;
             padding: 20px;
@@ -42,9 +42,57 @@
             text-align: center;
             color: rgba(255,255,255,0.9);
             font-size: 1.2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             font-style: italic;
             text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
+            backdrop-filter: blur(25px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 20;
+        }
+
+        .copyright::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .copyright:hover::before {
+            left: 100%;
+        }
+
+        .copyright p {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            margin: 0;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+            font-family: Georgia, serif;
+            text-transform: uppercase;
+        }
+
+        .copyright:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 25px 65px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.7);
         }
 
         .palette-section {
@@ -318,6 +366,15 @@
             .floating-pearls {
                 display: none;
             }
+
+            .copyright p {
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+
+            .copyright {
+                padding: 2rem;
+            }
         }
 
         .section-icon {
@@ -338,7 +395,12 @@
     <div class="container">
         <h1>🎨 Цветовые решения для жемчужного узора</h1>
         <p class="subtitle">Жемчужный узор прекрасно смотрится в самых разных цветовых решениях</p>
-        <p class="section-title">© Вязать здорово 🔮 Магия узора | 2025</p>
+        
+        <!-- Копирайт - теперь отдельный заметный блок -->
+        <div class="copyright">
+            <p>© Вязать здорово 🔮 Магия узора | 2025</p>
+        </div>
+
         <div class="palette-section">
             <h2 class="section-title"><span class="section-icon">🌸</span>Пастельные тона</h2>
             <p class="section-subtitle">Нежные оттенки, которые подчеркивают деликатную фактуру жемчужного узора и создают романтическое настроение</p>
